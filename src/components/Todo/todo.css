@@ -73,6 +73,7 @@ button {
 .add-button {
   color: #44c0b6;
   border-left: none;
+  margin-top:20px
 }
 
 .delete-button {
