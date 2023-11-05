@@ -29,13 +29,12 @@ body {
 h1 {
   font-weight: 700;
   color: #447444;
-  font-size: 2.5rem;
-  letter-spacing: 0.2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
 }
 
 .input-wrapper {
-  margin: 3.5rem;
+  margin:3.5rem;
   display: flex;
   align-items: center;
 }
@@ -44,7 +43,7 @@ h1 {
   margin-bottom: 2.5rem;
 }
 
-.todo {
+.tast-details {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -63,28 +62,43 @@ input:focus {
 input
  {
   font-size: 1em;
-  border: 1px solid #447444;
+  border: 2px solid #447444;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin-right: 10px;
+}
+button{
+  cursor: pointer;
 }
 .add-button {
+  font-size: 15px;
   padding: 0.8em;
   color: #fff;
   background-color: #447444;
   border-left: none;
-  border: 4px solid #447444;
-  padding: .8em;
+  border: 2px solid #447444;
+  padding: .85em;
   margin: 0;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 700;
+
 
   /* margin-top:20px */
 }
 .delete-button{
   padding: 0.85em;
   color: #fff;
-  background-color: #447444;
+  background-color: #BC412B;
   border-left: none;
-  border: 3px solid #447444;
+  border: 3px solid #BC412B;
   margin: 0;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 700;
+  margin-left: 10px;
 
-  /* margin-top:20px */
+  /* margin-
+  top:20px */
 }
 
 
@@ -113,5 +127,5 @@ li:last-child {
   font-size: 20px;
   font-weight: 400;
   color: #447444;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
 }

@@ -3,13 +3,35 @@ import './todo.css';
 import TodoForm from './TodoForm';
 import TodoLists from './TodoLists';
 const Index = () => {
-    const [todo,setTodo] = useState('');
+    const [isEmpty,setIsEmpty] = useState(false);
+    const [todo,setTodo] = useState({
+        id:'',
+        title:'',
+        isCompleted: false,
+        priority: ''
+    });
     const [todos,setTodos] = useState([]);
-    const addTask = ()=>{
-        if(todo !== ''){
+    const handleChange = (e)=>{
+        setTodo({
+            ...todo,
+            id: new Date().getDate(),
+            title: e.target.value
+        });
+    }
+    const addTask = (e)=>{
+        if(todo.title !== ''){
             setTodos([...todos,todo]);
-            setTodo('');
+            setTodo({
+                ...todo,
+                title: ''
+            });
+            setIsEmpty(false);
         }
+        else{
+            setIsEmpty(true);
+        }
+
+
     }
     const deleteTask = (deletedItem)=>{
         const newTodos = todos.filter((todo)=>{
@@ -19,8 +41,8 @@ const Index = () => {
     }
   return (
     <div>
-        <h1>TO DO APP</h1>
-        <TodoForm addTask={addTask} todo = {todo} setTodo= {setTodo}/>
+        <h1>Here is my Typical ToDo App</h1>
+        <TodoForm isEmpty={isEmpty} addTask={addTask} handleChange={handleChange} todo = {todo} setTodo= {setTodo}/>
         <TodoLists todos={todos} setTodos={setTodos} deleteTask={deleteTask}/>
     </div>
   )

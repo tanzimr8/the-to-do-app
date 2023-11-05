@@ -6,8 +6,10 @@ const TodoLists = ({todos,setTodos,deleteTask}) => {
         (<ul className="todo-list">
             {todos.map((todo,index)=>{
                 return (<div className="todo">
-                    <li key={index + new Date().getDate()}>{todo}</li>
-                    <button className="delete-button" onClick={()=>{deleteTask(todo)}}>Delete task</button>
+                    <div className="tast-details">
+                        <li key={todo.id + new Date().getDate()}>{todo.title}</li>
+                        <button className="delete-button" onClick={()=>{deleteTask(todo)}}>DELETE</button>
+                    </div>
                 </div>)
             })}
         </ul>)
